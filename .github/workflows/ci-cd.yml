@@ -147,7 +147,7 @@ jobs:
           name: "Logs ${{ matrix.os }} - nodejs ${{ matrix.node-version }}"
           path: logs/
 
-  deploy: 
+  deploy:
     if: needs.build.outputs.should_deploy == 'true'
     needs: build
     runs-on: ubuntu-latest
