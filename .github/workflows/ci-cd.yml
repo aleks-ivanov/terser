@@ -134,10 +134,10 @@ jobs:
         env:
           TEST_NO_SANDBOX: 1
 
-      - if: matrix.os == 'ubuntu-latest' && matrix.node-version == '12.x'
-        name: Run functional tests on ${{ matrix.os }} with Node 12.x
-        run: |
-          ./test/functional.sh 2>&1 | tee logs/functional_tests.log
+    #   - if: matrix.os == 'ubuntu-latest' && matrix.node-version == '12.x'
+    #     name: Run functional tests on ${{ matrix.os }} with Node 12.x
+    #     run: |
+    #       ./test/functional.sh 2>&1 | tee logs/functional_tests.log
 
       # Artifact publish to pipeline
 
@@ -184,8 +184,8 @@ jobs:
         run: |
           GITHUB_TAG="${{ needs.build.outputs.package_version_tag }}"
 
-          git config --global user.email ${{ secrets.USER_EMAIL }}
-          git config --global user.name ${{ secrets.USER_NAME }}
+          git config --global user.email ${{ secrets.GH_USER_EMAIL }}
+          git config --global user.name ${{ secrets.GH_USER_NAME }}
           git tag $GITHUB_TAG
           git push origin --tags
 
