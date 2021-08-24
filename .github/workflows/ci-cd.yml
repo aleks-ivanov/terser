@@ -166,17 +166,17 @@ jobs:
 
       # Package deploy
 
-      - name: Deploy to npm
-        run: |
-          echo $'registry=https://registry.npmjs.org/\n' //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+    #   - name: Deploy to npm
+    #     run: |
+    #       echo $'registry=https://registry.npmjs.org/\n' //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
 
-          npm ci
+    #       npm ci
 
-          npm publish --access public
+    #       npm publish --access public
 
-          rm -f .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    #       rm -f .npmrc
+    #     env:
+    #       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # GitHub deploy
 
