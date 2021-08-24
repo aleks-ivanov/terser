@@ -199,7 +199,7 @@ jobs:
           START_LINE=$(( $( grep -n "## $RELEASE_TAG" CHANGELOG.md | grep -Eo '^[^:]+' ) + 2 ))
           echo "START_LINE: $START_LINE"
           END_LINE=$(( $( grep -n "## $PREVIOUS_TAG" CHANGELOG.md | grep -Eo '^[^:]+' ) - 2 ))
-          echo "END_LINE: $END_LINE"
+          echo "END_LINE: $END_LINE" 
           RELEASE_NOTES=$(echo $'### Changelog:\n\n' "$( sed -n "$START_LINE,$END_LINE"p CHANGELOG.md )")
 
           gh release create $RELEASE_TAG --title $RELEASE_TITLE --notes "$RELEASE_NOTES"
