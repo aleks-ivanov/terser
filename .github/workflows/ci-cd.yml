@@ -188,7 +188,7 @@ jobs:
           git config --global user.name ${{ secrets.GITHUB_NAME }}
           git tag $GITHUB_TAG
           git push origin --tags
-          git fetch --all --tags
+          # git fetch --all --tags
 
       - name: Create and publish release
         run: |
