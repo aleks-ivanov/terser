@@ -1,6 +1,6 @@
 # Changelog
 
-## v5.7.3
+## v5.7.4
 
  - Avoided collapsing assignments together if it would place a chain assignment on the left hand side, which is invalid syntax (`a?.b = c`)
  - Removed undefined from object expansions (`{ ...void 0 }` -> `{}`)
@@ -9,7 +9,7 @@
  - Minor performance improvements (#993)
  - Fixed scope of function defs in strict mode (they are block scoped)
 
-## v5.7.2
+## v5.7.3
 
  - Several compile-time evaluation and inlining fixes
  - Allow `reduce_funcs` to be disabled again.
